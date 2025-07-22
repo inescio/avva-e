@@ -1,5 +1,5 @@
-import { fetchProducts } from "../../lib/api";
-import type { Product } from "../../lib/types";
+import { fetchProducts } from "../../../lib/api";
+import type { Product } from "../../../lib/types";
 import React from "react";
 import { notFound } from "next/navigation";
 
