@@ -3,11 +3,12 @@ import type { Product } from "../../../lib/types";
 import React from "react";
 import { notFound } from "next/navigation";
 
-interface ProductPageProps {
-  params: { id: string };
-}
+type PageProps = {
+  params: { id: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+};
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({ params }: PageProps) {
   const products: Product[] = await fetchProducts();
   const product = products.find((p) => p.id === params.id);
 
